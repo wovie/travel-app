@@ -1,0 +1,98 @@
+[
+  {
+    "title": "Top",
+    "source": "https://www.tripadvisor.com/TravelersChoice-Destinations-cTop-g1",
+    "destinations": [
+      { "rank": 1, "city": "London", "country": "United Kingdom" },
+      { "rank": 2, "city": "Bali", "country": "Indonesia" },
+      { "rank": 3, "city": "Dubai", "country": "United Arab Emirates" },
+      { "rank": 4, "city": "Sicily", "country": "Italy" },
+      { "rank": 5, "city": "Paris", "country": "France" },
+      { "rank": 6, "city": "Rome", "country": "Italy" },
+      { "rank": 7, "city": "Hanoi", "country": "Vietnam" },
+      { "rank": 8, "city": "Marrakesh", "country": "Morocco" },
+      { "rank": 9, "city": "Crete", "country": "Greece" },
+      { "rank": 10, "city": "Bangkok", "country": "Thailand" }
+    ]
+  },
+  {
+    "title": "Trending",
+    "source": "https://www.tripadvisor.com/TravelersChoice-Destinations-cTrending-g1",
+    "destinations": [
+      { "rank": 1, "city": "Osaka", "country": "Japan" },
+      { "rank": 2, "city": "Kuala Lumpur", "country": "Malaysia" },
+      { "rank": 3, "city": "Buenos Aires", "country": "Argentina" },
+      { "rank": 4, "city": "Manama", "country": "Bahrain" },
+      { "rank": 5, "city": "Lima", "country": "Peru" },
+      { "rank": 6, "city": "Medellín", "country": "Colombia" },
+      { "rank": 7, "city": "Auckland", "country": "New Zealand" },
+      { "rank": 8, "city": "Kyoto", "country": "Japan" },
+      { "rank": 9, "city": "Seoul", "country": "South Korea" },
+      { "rank": 10, "city": "Casablanca", "country": "Morocco" }
+    ]
+  },
+  {
+    "title": "Culture",
+    "source": "https://www.tripadvisor.com/TravelersChoice-Destinations-cCulture-g1",
+    "destinations": [
+      { "rank": 1, "city": "Bali", "country": "Indonesia" },
+      { "rank": 2, "city": "Hanoi", "country": "Vietnam" },
+      { "rank": 3, "city": "London", "country": "United Kingdom" },
+      { "rank": 4, "city": "Marrakesh", "country": "Morocco" },
+      { "rank": 5, "city": "Rome", "country": "Italy" },
+      { "rank": 6, "city": "Cusco", "country": "Peru" },
+      { "rank": 7, "city": "Kathmandu", "country": "Nepal" },
+      { "rank": 8, "city": "New Delhi", "country": "India" },
+      { "rank": 9, "city": "Crete", "country": "Greece" },
+      { "rank": 10, "city": "Krong Siem Reap", "country": "Cambodia" }
+    ]
+  },
+  {
+    "title": "Food",
+    "source": "https://www.tripadvisor.com/TravelersChoice-Destinations-cFood-g1",
+    "destinations": [
+      { "rank": 1, "city": "Rome", "country": "Italy" },
+      { "rank": 2, "city": "London", "country": "United Kingdom" },
+      { "rank": 3, "city": "Marrakesh", "country": "Morocco" },
+      { "rank": 4, "city": "Paris", "country": "France" },
+      { "rank": 5, "city": "Naples", "country": "Italy" },
+      { "rank": 6, "city": "Barcelona", "country": "Spain" },
+      { "rank": 7, "city": "Lima", "country": "Peru" },
+      { "rank": 8, "city": "New Orleans", "country": "United States" },
+      { "rank": 9, "city": "Buenos Aires", "country": "Argentina" },
+      { "rank": 10, "city": "Athens", "country": "Greece" }
+    ]
+  },
+  {
+    "title": "Solo Travel",
+    "source": "https://www.tripadvisor.com/TravelersChoice-Destinations-cSoloTravel-g1",
+    "destinations": [
+      { "rank": 1, "city": "Seoul", "country": "South Korea" },
+      { "rank": 2, "city": "Kathmandu", "country": "Nepal" },
+      { "rank": 3, "city": "Cusco", "country": "Peru" },
+      { "rank": 4, "city": "Bangkok", "country": "Thailand" },
+      { "rank": 5, "city": "Osaka", "country": "Japan" },
+      { "rank": 6, "city": "Dubai", "country": "United Arab Emirates" },
+      { "rank": 7, "city": "Kyoto", "country": "Japan" },
+      { "rank": 8, "city": "Chiang Mai", "country": "Thailand" },
+      { "rank": 9, "city": "Reykjavík", "country": "Iceland" },
+      { "rank": 10, "city": "Melbourne", "country": "Australia" }
+    ]
+  },
+  {
+    "title": "25th Anniversary",
+    "source": "https://www.tripadvisor.com/TravelersChoice-Destinations-c25thAnniversary-g1",
+    "destinations": [
+      { "rank": 1, "city": "London", "country": "United Kingdom" },
+      { "rank": 2, "city": "New York City", "country": "United States" },
+      { "rank": 3, "city": "Rome", "country": "Italy" },
+      { "rank": 4, "city": "Paris", "country": "France" },
+      { "rank": 5, "city": "Bali", "country": "Indonesia" },
+      { "rank": 6, "city": "Barcelona", "country": "Spain" },
+      { "rank": 7, "city": "Dubai", "country": "United Arab Emirates" },
+      { "rank": 8, "city": "Crete", "country": "Greece" },
+      { "rank": 9, "city": "Lisbon", "country": "Portugal" },
+      { "rank": 10, "city": "Bangkok", "country": "Thailand" }
+    ]
+  }
+]

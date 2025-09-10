@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useAppContext } from '@/contexts/AppContext';
 import { AttractionsCard } from '@/components/AttractionsCard';
-import { getBackgroundBlurText } from '@/lib/util';
+import { BackgroundBlurText } from '@/components/BackgroundBlurText';
 import { getPhotoImageUrl } from '@/lib/actions';
 
 export default function DetailsPage() {
@@ -22,8 +22,6 @@ export default function DetailsPage() {
   useEffect(() => {
     if (details === null) router.push('/');
   }, [details, router]);
-
-  // const { result, attractions, backgroundImage } = details;
 
   const categories = useMemo(
     () => Object.keys(attractions || {}),
@@ -84,7 +82,7 @@ export default function DetailsPage() {
             {result?.displayName.text}
           </h1>
           <p className='mb-16 text-center'>
-            {getBackgroundBlurText(result?.formattedAddress)}
+            <BackgroundBlurText text={result?.formattedAddress} />
           </p>
         </div>
       </div>

@@ -1,9 +1,7 @@
 'use server';
 
-import type { Attraction } from '@/components/PinnedResults';
-import type { Location } from '@/components/SearchResults';
-import type { Photo } from '@/components/SearchResults';
-import { INDUSTRY_TYPES } from '@/lib/util';
+import type { Attraction, Location, Photo } from '@/lib/types';
+import { INDUSTRY_TYPES } from '@/lib/constants';
 
 const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
 

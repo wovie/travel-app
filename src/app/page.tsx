@@ -1,66 +1,18 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { useAppContext } from '@/contexts/AppContext';
-import { TopTenCard, type Destination } from '@/components/TopTenCard';
-import { SearchResults, type SearchResult } from '@/components/SearchResults';
+import { TopTenCard } from '@/components/TopTenCard';
 import { PinnedResults } from '@/components/PinnedResults';
+import { SearchBar } from '@/components/SearchBar';
 import { getFormattedDestination } from '@/lib/util';
 import { doSearch } from '@/lib/actions';
+import type { SearchResult, Destination } from '@/lib/types';
 import tripadvisorAwards from './tripadvisor-travelers-choice-awards.json';
 
 export default function Home() {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [cardHighlights, setCardHighlights] = useState<string[]>([]);
-  const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
-  const [showSearchResults, setShowSearchResults] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
-  const searchResultsRef = useRef<HTMLInputElement>(null);
-  const { pinnedResults, setPinnedResults } = useAppContext();
+  const { pinnedResults, setPinnedResults, cardHighlights } = useAppContext();
   const [showSidebar, setShowSidebar] = useState(false);
-
-  // Hides search results dropdown
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        inputRef.current &&
-        !inputRef.current.contains(event.target as Node) &&
-        searchResultsRef.current &&
-        !searchResultsRef.current.contains(event.target as Node)
-      ) {
-        setShowSearchResults(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, []);
-
-  // Updates destination highlights
-  useEffect(() => {
-    setCardHighlights(
-      pinnedResults
-        .map((r) => {
-          // Handle edge case
-          if (r.displayName?.text === 'Federal Territory of Kuala Lumpur')
-            return 'Kuala Lumpur';
-          return r.displayName?.text;
-        })
-        .filter(Boolean)
-    );
-
-    // Hacky way to hide results (when a result is clicked,
-    // it is pinned and the results dropdown should be hidden).
-    // This could be better handled using AppContext.
-    setShowSearchResults(false);
-    setSearchTerm('');
-  }, [pinnedResults]);
-
-  const handleSearchClick = async () => {
-    if (!searchTerm || searchTerm.length === 0) return;
-    const results = await doSearch(searchTerm);
-    setSearchResults(results);
-    setShowSearchResults(true);
-  };
 
   // When destination is clicked from sidebar, skip showing search results and pin it.
   const handleDestinationClick = useCallback(
@@ -143,44 +95,7 @@ export default function Home() {
               <span className='block w-6 h-0.5 bg-sky-500'></span>
             </button>
             {/* Search bar */}
-            <div className='relative w-full'>
-              <label htmlFor='search' className='sr-only'>
-                Search
-              </label>
-              <input
-                ref={inputRef}
-                id='search'
-                type='text'
-                className='w-full border border-sky-500 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-sky-300 transition'
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder='Find a travel destination...'
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') handleSearchClick();
-                }}
-              ></input>
-              {/* Search results */}
-              {showSearchResults && (
-                <div
-                  ref={searchResultsRef}
-                  className='absolute left-0 right-0 z-20 bg-white border-x border-b border-sky-200 rounded shadow-lg max-h-80 overflow-y-auto'
-                >
-                  {searchResults && searchResults.length > 0 ? (
-                    <SearchResults results={searchResults} />
-                  ) : (
-                    <div className='p-2'>No results found.</div>
-                  )}
-                </div>
-              )}
-            </div>
-            {/* Search button */}
-            <button
-              type='button'
-              className='text-sky-500 rounded px-4 py-2 font-medium transition border border-sky-500 cursor-pointer hover:bg-gray-100 hover:shadow-md'
-              onClick={handleSearchClick}
-            >
-              Search
-            </button>
+            <SearchBar />
           </div>
         </div>
         {/* Pinned results */}

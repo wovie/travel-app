@@ -1,6 +1,7 @@
 import Image from 'next/image';
-import type { Attraction } from '@/components/PinnedResults';
-import { formatCategory, getBackgroundBlurText } from '@/lib/util';
+import { BackgroundBlurText } from '@/components/BackgroundBlurText';
+import { formatCategory } from '@/lib/util';
+import { Attraction } from '@/lib/types';
 
 export function AttractionsCard({
   category,
@@ -38,14 +39,16 @@ export function AttractionsCard({
                 aria-label={`Visit ${a.websiteUri}`}
                 className='hover:underline hover:decoration-white'
               >
-                {getBackgroundBlurText(
-                  `${a.displayName.text}: ${a.rating ? a.rating : '0'} ⭐`
-                )}
+                <BackgroundBlurText
+                  text={`${a.displayName.text}: ${
+                    a.rating ? a.rating : '0'
+                  } ⭐`}
+                />
               </a>
             ) : (
-              getBackgroundBlurText(
-                `${a.displayName.text}: ${a.rating ? a.rating : '0'} ⭐`
-              )
+              <BackgroundBlurText
+                text={`${a.displayName.text}: ${a.rating ? a.rating : '0'} ⭐`}
+              />
             )}
           </li>
         ))}

@@ -1,10 +1,5 @@
 import { getFormattedDestination } from '@/lib/util';
-
-export type Destination = {
-  rank?: number;
-  city: string;
-  country: string;
-};
+import { Destination } from '@/lib/types';
 
 type TopTenCardProps = {
   title: string;
@@ -39,7 +34,8 @@ export function TopTenCard({
             href={source}
             target='_blank'
             className='cursor-pointer'
-            aria-label={`Tripadvisor Travelers' Choice Awards - ${title}`} rel="noreferrer"
+            aria-label={`Tripadvisor Travelers' Choice Awards - ${title}`}
+            rel='noreferrer'
           >{`Tripadvisor Travelers' Choice Awards - ${title}`}</a>
         ) : (
           `Tripadvisor Travelers' Choice Awards - ${title}`

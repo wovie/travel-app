@@ -7,8 +7,7 @@ import React, {
   ReactNode,
   useMemo,
 } from 'react';
-import type { SearchResult } from '@/components/SearchResults';
-import type { Attraction } from '@/components/PinnedResults';
+import type { SearchResult, Attraction } from '@/lib/types';
 
 type DetailsType = {
   result: SearchResult;
@@ -26,6 +25,8 @@ type AppContextType = {
   setDetails: (details: DetailsType) => void;
   pinnedResults: SearchResult[];
   setPinnedResults: (results: SearchResult[]) => void;
+  cardHighlights: string[];
+  setCardHighlights: (highlights: string[]) => void;
 };
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -33,11 +34,19 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export function AppProvider({ children }: { children: ReactNode }) {
   const [details, setDetails] = useState<DetailsType>(null);
   const [pinnedResults, setPinnedResults] = useState<SearchResult[]>([]);
+  const [cardHighlights, setCardHighlights] = useState<string[]>([]);
 
   // Memoize context value for performance
   const value = useMemo(
-    () => ({ details, setDetails, pinnedResults, setPinnedResults }),
-    [details, pinnedResults]
+    () => ({
+      details,
+      setDetails,
+      pinnedResults,
+      setPinnedResults,
+      cardHighlights,
+      setCardHighlights,
+    }),
+    [details, pinnedResults, cardHighlights, setCardHighlights]
   );
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

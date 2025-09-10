@@ -2,31 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { getPhotoImageUrl } from '@/lib/actions';
 import { useAppContext } from '@/contexts/AppContext';
-
-export type Location = {
-  latitude: number;
-  longitude: number;
-};
-
-export type Photo = {
-  authorAttributions: [];
-  flagContentUri: string;
-  heightPx: number;
-  name: string;
-  widthPx: number;
-};
-
-export type SearchResult = {
-  displayName: {
-    languageCode: string;
-    text: string;
-  };
-  formattedAddress: string;
-  id: string;
-  location: Location;
-  name: string;
-  photos: Photo[];
-};
+import { Photo, SearchResult } from '@/lib/types';
 
 function Thumbnail({ photo }: { photo: Photo }) {
   const [imageUrl, setImageUrl] = useState('');

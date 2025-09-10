@@ -49,16 +49,17 @@ export function SearchResults({ results }: { results: SearchResult[] }) {
   return (
     <ul>
       {results.map((result) => (
-        <li
-          key={result.id}
-          className='p-2 cursor-pointer hover:bg-slate-50 flex items-center gap-2'
-          onClick={() => handleClick(result)}
-          aria-label={`Pin ${result.displayName.text}`}
-        >
-          <div className='size-16 relative shrink-0 bg-gray-100 rounded-lg'>
-            <Thumbnail photo={result.photos?.[0]} />
-          </div>
-          {result.formattedAddress}
+        <li key={result.id}>
+          <button
+            className='w-full p-2 cursor-pointer hover:bg-slate-50 flex items-center gap-2'
+            onClick={() => handleClick(result)}
+            aria-label={`Pin ${result.displayName.text}`}
+          >
+            <div className='size-16 relative shrink-0 bg-gray-100 rounded-lg'>
+              <Thumbnail photo={result.photos?.[0]} />
+            </div>
+            {result.formattedAddress}
+          </button>
         </li>
       ))}
     </ul>

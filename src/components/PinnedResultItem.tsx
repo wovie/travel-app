@@ -72,8 +72,14 @@ export function PinnedResultItem({
 
   return (
     <div
+      role='button'
+      tabIndex={0}
       className='relative bg-gray-300 cursor-pointer p-2 rounded-lg transition-all duration-300 ease-in-out hover:scale-101 hover:shadow-lg min-h-[212px]'
       onClick={handleClick}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') handleClick();
+      }}
+      aria-label={`View details for ${result.formattedAddress}`}
     >
       {/* Background image */}
       {backgroundImage && (

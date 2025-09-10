@@ -44,16 +44,18 @@ export function TopTenCard({
       {/* Destinations list */}
       <ul className='text-md md:text-sm'>
         {destinations.map((destination) => (
-          <li
-            key={destination.rank}
-            className={
-              `cursor-pointer hover:text-sky-600 transition-colors ` +
-              (showHighlight(destination) ? 'font-bold' : '')
-            }
-            onClick={() => onClick(destination)}
-            aria-label={getFormattedDestination(destination)}
-          >
-            {`${destination.rank}. ${getFormattedDestination(destination)}`}
+          <li key={destination.rank}>
+            <button
+              type='button'
+              className={
+                `cursor-pointer hover:text-sky-600 transition-colors ` +
+                (showHighlight(destination) ? 'font-bold' : '')
+              }
+              onClick={() => onClick(destination)}
+              aria-label={getFormattedDestination(destination)}
+            >
+              {`${destination.rank}. ${getFormattedDestination(destination)}`}
+            </button>
           </li>
         ))}
       </ul>

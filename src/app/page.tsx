@@ -12,7 +12,7 @@ import tripadvisorAwards from './tripadvisor-travelers-choice-awards.json';
 
 export default function Home() {
   const { pinnedResults, setPinnedResults, cardHighlights } = useAppContext();
-  const [showSidebar, setShowSidebar] = useState(false);
+  const [showSidebar, setShowSidebar] = useState(true);
 
   // When destination is clicked from sidebar, skip showing search results and pin it.
   const handleDestinationClick = useCallback(

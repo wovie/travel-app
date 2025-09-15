@@ -44,7 +44,7 @@ export function SearchBar() {
         ref={inputRef}
         id='search'
         type='text'
-        className='w-full border border-sky-500 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-sky-300 transition'
+        className='w-full border border-sky-700 rounded px-3 py-2 focus:outline-none focus:ring-1 focus:ring-sky-900 transition'
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
         placeholder='Find a travel destination...'
@@ -54,7 +54,7 @@ export function SearchBar() {
       ></input>
       <button
         type='button'
-        className='text-sky-500 rounded px-4 py-2 font-medium transition border border-sky-500 cursor-pointer hover:bg-gray-100 hover:shadow-md'
+        className='text-sky-700 border-sky-700 rounded px-4 py-2 font-medium transition border cursor-pointer hover:bg-gray-100 hover:shadow-md'
         onClick={handleSearchClick}
       >
         Search
@@ -63,7 +63,7 @@ export function SearchBar() {
       {showSearchResults && (
         <div
           ref={searchResultsRef}
-          className='absolute left-0 right-0 top-[50px] z-20 bg-white border-2 border-sky-500 rounded shadow-lg max-h-80 overflow-y-auto'
+          className='border-sky-700 absolute left-0 right-0 top-[50px] z-20 bg-white border-2 rounded shadow-lg max-h-80 overflow-y-auto'
         >
           {searchResults && searchResults.length > 0 ? (
             <SearchResults results={searchResults} />

@@ -63,7 +63,7 @@ export default function DetailsPage() {
         {backgroundImage && (
           <Image
             src={backgroundImage}
-            alt='Background image'
+            alt=''
             fill
             priority
             className='object-cover rounded-lg'

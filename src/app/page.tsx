@@ -52,10 +52,14 @@ export default function Home() {
         }`}
         role='dialog'
         aria-modal='true'
+        aria-labelledby='sidebar-heading'
+        inert={!showSidebar}
       >
         {/* Heading */}
         <div className='flex justify-between items-center'>
-          <h2 className='font-semibold text-xl'>Explore Top Spots</h2>
+          <h2 id='sidebar-heading' className='font-semibold text-xl'>
+            Explore Top Spots
+          </h2>
           <button
             className='md:hidden bg-white border border-sky-500 rounded px-3 py-1 ml-2 text-md text-sky-500 font-extrabold'
             onClick={() => setShowSidebar((v) => !v)}
@@ -94,11 +98,9 @@ export default function Home() {
               <span className='block w-6 h-0.5 bg-sky-500 mb-1'></span>
               <span className='block w-6 h-0.5 bg-sky-500'></span>
             </button>
-            {/* Search bar */}
             <SearchBar />
           </div>
         </div>
-        {/* Pinned results */}
         <PinnedResults
           results={pinnedResults}
           removePinHandler={removePinHandler}

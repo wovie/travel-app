@@ -17,7 +17,7 @@ export default function Home() {
   // When destination is clicked from sidebar, skip showing search results and pin it.
   const handleDestinationClick = useCallback(
     async (destination: Destination) => {
-      setShowSidebar(false);
+      // setShowSidebar(false);
       const formattedDestination = getFormattedDestination(destination);
 
       // Check if destination is already pinned
